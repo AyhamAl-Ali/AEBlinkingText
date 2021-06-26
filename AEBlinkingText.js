@@ -8,6 +8,7 @@
 // StartAt = time before the text begins to type (cursor will be blinking while that time)
 // BlinkingSpeed = Cursor blinking speed
 // Speed = text typing speed (makes it longer or shorter in time)
+// CursorKeepsBlinking = Keeps blinking after text typing is done?
 
 T1 = time - startTime // If the layer is moved forward this will take care of it
 X = text.sourceText;
@@ -16,7 +17,7 @@ L = X.length;
 T = T1 * effect("Speed")("Slider") - effect("StartAt")("Slider") * effect("Speed")("Slider");
 
 CursorChar = "|"; // Cursor character
-CursorKeepsBlinking = effect("CursorKeepsBlinking")("Checkbox") == 1; // Keeps blinking after text typing is done?
+CursorKeepsBlinking = effect("CursorKeepsBlinking")("Checkbox") == 1; 
 
 Cursor = " ";
 if (F==1 | T>0) Cursor = CursorChar;
